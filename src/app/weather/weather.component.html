@@ -1,0 +1,12 @@
+<div class="weather-container">
+    <h2>escolha sua cidade:</h2>
+    <input type="text" [(ngModel)]="city" placeholder="Digite o nome da cidade">
+    <button (click)="searchWeather()">Pesquisar</button>
+
+    <div *ngIf="weatherData" class="weather-info">
+        <h3>{{ weatherData.location.name }}</h3>
+        <img [src]="weatherData.current.condition.icon" alt="Condição do Tempo">
+        <p>Temperatura: {{ weatherData.current.temp_c }}°C</p>
+        <p>Condição: {{ weatherData.current.condition.text }}</p>
+          </div>
+</div>
